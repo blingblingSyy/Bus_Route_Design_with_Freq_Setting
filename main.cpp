@@ -10,8 +10,8 @@ using namespace std;
 int main()
 {
     srand((unsigned)time(NULL));
-	int run_time = 10;
-	int gen_num = 100;
+	int run_time = 10;	//set new parameters: run times
+	int gen_num = 100;  //set new parameters: iteration times
 	
 	vector<double> transfer1;
 	vector<double> transfer2;
