@@ -10,8 +10,8 @@ using namespace std;
 int main()
 {
     srand((unsigned)time(NULL));
-	int run_time = 1;
-	int gen_num = 50;
+	int run_time = 10;
+	int gen_num = 100;
 	
 	vector<double> transfer1;
 	vector<double> transfer2;
@@ -92,29 +92,29 @@ int main()
 	}
 	outfile1 << endl;
 
-	// double mean_transfer2 = avg(transfer2);
-	// double sd_transfer2 = stdev(transfer2, mean_transfer2);
-	// double mean_time2 = avg(travel_time2);
-	// double sd_time2 = stdev(travel_time2, mean_time2);
-	// double mean_obj2 = avg(obj_v2);
-	// double sd_obj2 = stdev(obj_v2, mean_obj2);
-	// outfile1 << "The average transfer is " << mean_transfer2 << endl;
-	// outfile1 << "The standard deviation of transfer is " << sd_transfer2 << endl;
-	// outfile1 << "The average travel time is " << mean_time2 << endl;
-	// outfile1 << "The standard deviation of travel time is " << sd_time2 << endl;
-	// outfile1 << "The average objective value is " << mean_obj2 << endl;
-	// outfile1 << "The standard deviation of objective value is " << sd_obj2 << endl;
-	// outfile1 << endl;
+	double mean_transfer2 = avg(transfer2);
+	double sd_transfer2 = stdev(transfer2, mean_transfer2);
+	double mean_time2 = avg(travel_time2);
+	double sd_time2 = stdev(travel_time2, mean_time2);
+	double mean_obj2 = avg(obj_v2);
+	double sd_obj2 = stdev(obj_v2, mean_obj2);
+	outfile1 << "The average transfer is " << mean_transfer2 << endl;
+	outfile1 << "The standard deviation of transfer is " << sd_transfer2 << endl;
+	outfile1 << "The average travel time is " << mean_time2 << endl;
+	outfile1 << "The standard deviation of travel time is " << sd_time2 << endl;
+	outfile1 << "The average objective value is " << mean_obj2 << endl;
+	outfile1 << "The standard deviation of objective value is " << sd_obj2 << endl;
+	outfile1 << endl;
 
-	// duration2 = (clock() - start2 ) / (double) CLOCKS_PER_SEC;
-    // outfile1 << "Algorithm took an average of "<< double(duration2)/run_time << " seconds per run." << endl;
-	// outfile1 << "----------------------------------------------------------------------------------" << endl;
-	// outfile1 << endl;
+	duration2 = (clock() - start2 ) / (double) CLOCKS_PER_SEC;
+    outfile1 << "Algorithm took an average of "<< double(duration2)/run_time << " seconds per run." << endl;
+	outfile1 << "----------------------------------------------------------------------------------" << endl;
+	outfile1 << endl;
 
-	// double ttest_objv = ttest(mean_obj1, sd_obj1, mean_obj2, sd_obj2, obj_v1.size(), obj_v2.size());
-	// double dof_objv = dof(mean_obj1, sd_obj1, mean_obj2, sd_obj2, obj_v1.size(), obj_v2.size());
-	// outfile1 << "* t-stat value of the objective of the two algorithms: " << ttest_objv << endl;
-	// outfile1 << "degree of freedom of the two samples = " << dof_objv << endl;
+	double ttest_objv = ttest(mean_obj1, sd_obj1, mean_obj2, sd_obj2, obj_v1.size(), obj_v2.size());
+	double dof_objv = dof(mean_obj1, sd_obj1, mean_obj2, sd_obj2, obj_v1.size(), obj_v2.size());
+	outfile1 << "* t-stat value of the objective of the two algorithms: " << ttest_objv << endl;
+	outfile1 << "degree of freedom of the two samples = " << dof_objv << endl;
 
 	outfile1.close();
 
